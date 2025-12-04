@@ -1,2 +1,4 @@
-# js_ts_training
-Training For Javascript And TypeScript
+# このリポジトリについて
+
+このリポジトリは、Javascrit, Typescript の学習用リポジトリです。
+それぞれの言語で抑えるべき記法やルールを、実際に手を動かしながら学ぶことができます。
