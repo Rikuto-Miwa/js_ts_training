@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+  color: #0f172a;
+  background: radial-gradient(circle at 20% 20%, #f7f8ff, #eef2ff 40%, #f8fafc 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 0 0 8px;
+  color: #4f46e5;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 12px;
+  color: #0b1340;
+}
+
+.lede {
+  margin: 0;
+  max-width: 640px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 50px rgba(15, 23, 42, 0.08);
+  min-width: 160px;
+}
+
+.meta-label {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.meta strong {
+  font-size: 20px;
+  color: #0b1340;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
+}
+
+.control-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.field {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 6px;
+  min-width: 280px;
+  font-weight: 600;
+  color: #0f172a;
 }
 
-.App-link {
-  color: #61dafb;
+select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  background: #fff;
+  color: #0f172a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 120ms ease, box-shadow 160ms ease;
+}
+
+button.primary {
+  background: linear-gradient(120deg, #4f46e5, #7c3aed);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.question {
+  background: #0b1340;
+  color: #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.question.empty {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.question-topic {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  margin: 0;
+}
+
+.question-title {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.question-hint {
+  margin: 0;
+  font-size: 14px;
+  color: #c7d2fe;
+}
+
+.side h3 {
+  margin: 0 0 10px;
+  color: #0b1340;
+}
+
+.history {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.history-text {
+  color: #0f172a;
+  line-height: 1.4;
+}
+
+.pill {
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.muted {
+  margin: 0 0 10px;
+  color: #94a3b8;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-header {
+    flex-direction: column;
+  }
+
+  .meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
